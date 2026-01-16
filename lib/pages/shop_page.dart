@@ -45,7 +45,7 @@ class _MyShopPageState extends State<MyShopPage> {
             ],
           ),
         ),
-        SizedBox(height: 10),
+        SizedBox(height: 10, width: 10),
 
         Expanded(
           child: ListView.builder(
