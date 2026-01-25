@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sun_glasses_shop/models/glasses.dart';
-import 'package:sun_glasses_shop/pages/shop_page.dart';
 
 class Cart extends ChangeNotifier {
   // List of shoes for sale
@@ -10,12 +9,6 @@ class Cart extends ChangeNotifier {
       price: '250',
       description: 'Brown reflects the sun nices',
       imagePath: 'lib/images/common.jpg',
-    ),
-    Glasses(
-      name: 'Classic Shades',
-      price: '300',
-      description: 'Class is never out of style',
-      imagePath: 'lib/images/legendary.jpg',
     ),
     Glasses(
       name: 'Ama 2K',
@@ -33,7 +26,31 @@ class Cart extends ChangeNotifier {
       name: 'Stylish',
       price: '150',
       description: 'This style will always be in Fashion!',
-      imagePath: 'lib/images/newStyle.jpg',
+      imagePath: 'lib/images/stylish.jpg',
+    ),
+    Glasses(
+      name: 'Classic',
+      price: '150',
+      description: 'Still is always Fashionable!',
+      imagePath: 'lib/images/classic.jpg',
+    ),
+    Glasses(
+      name: 'Modern',
+      price: '150',
+      description: 'Creativity at it best for Fashion!',
+      imagePath: 'lib/images/modern.jpg',
+    ),
+    Glasses(
+      name: 'Old School',
+      price: '253',
+      description: 'Old School meets modern Fashion!',
+      imagePath: 'lib/images/OldSchool.jpg',
+    ),
+    Glasses(
+      name: 'Old Plus New',
+      price: '321',
+      description: 'Old School combined withNew School for Fashion!',
+      imagePath: 'lib/images/OldAndNew.jpg',
     ),
   ];
 

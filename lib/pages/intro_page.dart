@@ -20,7 +20,7 @@ class IntroPage extends StatelessWidget {
             SizedBox(height: 48),
             // title
             Text(
-              'The Best Sun Glasses in Town!',
+              'The Best SunGlasses in Town!',
               style: TextStyle(
                 fontSize: 20,
                 color: Colors.black45,
@@ -32,7 +32,7 @@ class IntroPage extends StatelessWidget {
             SizedBox(height: 48),
             // title
             Text(
-              'Brand new Sunglasses created with high quality and offer guaranteed eyes protection!',
+              'Brand new Sunglasses created with high quality and offer guaranteed eye protection!',
               style: TextStyle(fontSize: 15, color: Colors.grey),
               textAlign: TextAlign.center,
             ),

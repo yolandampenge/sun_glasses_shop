@@ -12,6 +12,18 @@ class MyShopPage extends StatefulWidget {
 }
 
 class _MyShopPageState extends State<MyShopPage> {
+  void addSunglassesToCart(Glasses glasses) {
+    Provider.of<Cart>(context, listen: false).addItemToCart(glasses);
+
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text('Successfully Added'),
+        content: Text('Check your Cart!'),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Consumer<Cart>(
@@ -62,16 +74,15 @@ class _MyShopPageState extends State<MyShopPage> {
           SizedBox(height: 10),
           Expanded(
             child: ListView.builder(
-              itemCount: 5,
+              itemCount: value.getSunGlassesList().length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                Glasses glasses = Glasses(
-                  name: 'Common Glasses',
-                  price: '250',
-                  description: 'Class is never out of style',
-                  imagePath: 'lib/images/common.jpg',
+                Glasses glasses = value.getSunGlassesList()[index];
+                return MyGlassesTiles(
+                  glasses: glasses,
+                  currency: 'R',
+                  onTap: () => addSunglassesToCart(glasses),
                 );
-                return MyGlassesTiles(glasses: glasses, currency: 'R');
               },
             ),
           ),

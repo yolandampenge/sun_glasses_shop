@@ -4,7 +4,13 @@ import 'package:sun_glasses_shop/models/glasses.dart';
 class MyGlassesTiles extends StatelessWidget {
   Glasses glasses;
   String currency;
-  MyGlassesTiles({super.key, required this.glasses, required this.currency});
+  void Function() onTap;
+  MyGlassesTiles({
+    super.key,
+    required this.glasses,
+    required this.currency,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -25,8 +31,14 @@ class MyGlassesTiles extends StatelessWidget {
           ),
           // description
           SizedBox(height: 35),
-          Text(glasses.description),
-
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 25.0),
+            child: Text(
+              glasses.description,
+              style: TextStyle(color: Colors.grey[650]),
+            ),
+          ),
+          SizedBox(height: 20),
           // price and details
           Padding(
             padding: const EdgeInsets.only(left: 20),
@@ -50,17 +62,20 @@ class MyGlassesTiles extends StatelessWidget {
                     ),
                   ],
                 ),
-                Container(
-                  padding: EdgeInsets.all(6),
-                  decoration: BoxDecoration(
-                    color: Colors.black38,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(12),
-                      bottomRight: Radius.circular(12),
+                GestureDetector(
+                  onTap: onTap,
+                  child: Container(
+                    padding: EdgeInsets.all(6),
+                    decoration: BoxDecoration(
+                      color: Colors.black38,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(12),
+                        bottomRight: Radius.circular(12),
+                      ),
                     ),
-                  ),
 
-                  child: Icon(Icons.add),
+                    child: Icon(Icons.add),
+                  ),
                 ),
               ],
             ),
